@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Effects | COMP2105 Motion Graphics for Interaction</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        section {
+            width: 200px;
+            display: inline-block;
+        }
+        section h2 {
+            color: white;
+            font-weight: bold;
+            width: 150px;
+            height: 150px;
+        }
+        section:nth-of-type(1) h2 {
+            background-color: orange;   
+        }
+        section:nth-of-type(2) h2 {
+            background-color: red;   
+        }
+        section:nth-of-type(3) h2 {
+            background-color: green;   
+        }
+        section:nth-of-type(4) h2 {
+            background-color: blue;   
+        }
+        
+        /* Interactive Classes */
+
+    </style>
+    <!-- STEP 1: Attach jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // STEP 2: Create document ready event handler
+        $(document).ready(function() {
+            
+            // STEP 3a: Create onclick handler
+            $("#hide").click(function() {
+                // STEP 3b: Hide H2 element just before button
+                $("h2").hide();
+            });
+            
+            // STEP 3c: Create onclick handler
+            $("#show").click(function() {
+                // STEP 3e: Show all elements that have the hidden style class
+                $("h2").show();
+            });
+            
+            // STEP 4a: Create onclick handler
+            $("#down").click(function() {
+                // STEP 4b: Slide down the H2 element just before button
+                $("h2").slideDown();
+            });
+            
+            // STEP 4c: Create onclick handler
+            $("#up").click(function() {
+                // STEP 4d: Slide back down the H2 that was slid up
+                $("h2").slideUp();
+            });
+            
+            // STEP 5a: Create onclick handler
+            $("#out").click(function() {
+                // STEP 5b: Fade out the H2 element just before button
+                $("h2").fadeOut();
+            });
+            
+            // STEP 5c: Create onclick handler
+            $("#in").click(function() {
+                // STEP 5d: Fade in the H2 that was slid up
+                $("h2").fadeIn();
+            });
+            
+            // STEP 6a: Create onclick handler
+            $("#toggle").click(function() {
+                // STEP 6b: Toggle the H2 element just before button
+                $("h2").toggle();
+            });
+            
+            // STEP 6c: Create onclick handler
+            $("#toggle-fade-slide").click(function() {
+                // Toggle fade or slide the H2 element just before button
+                $("h2").toggle("fade");
+            });
+            
+            // Build a button to stop all animations in progress
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery Effects</h1>
+    <section>
+        <h2>Hide / Show</h2>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+    </section>
+    <section>
+        <h2>Slide Up / Slide Down</h2>
+        <button id="down">Slide Down</button>
+        <button id="up">Slide Up</button>
+    </section>
+    <section>
+        <h2>Fade Out / Fade In</h2>
+        <button id="out">Fade Out</button>
+        <button id="in">Fade In</button>
+    </section>
+    <section>
+        <h2>Toggle</h2>
+        <button id="toggle">Toggle</button>
+    </section>
+</body>
+</html>
+
